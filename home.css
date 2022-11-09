@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* MEDIA QUERIES */
 /* PC: min-width: 1024px
 Tablet: min-width: 740px max-width: 1023px
@@ -179,7 +178,7 @@ body {
     #footerRight {
         margin: 8px 32px 16px 32px;
     }
-=======
+}
 /* MEDIA QUERIES */
 /* PC: min-width: 1024px
 Tablet: min-width: 740px max-width: 1023px
@@ -360,5 +359,4 @@ body {
     #footerRight {
         margin: 8px 32px 16px 32px;
     }
->>>>>>> 394f32b (Upload source code 1.0)
 }

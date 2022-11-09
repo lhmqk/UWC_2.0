@@ -31,17 +31,14 @@ Mobile: max-width: 729px */
     color: #0a0a0a;
 }
 body {
-<<<<<<< HEAD
     background-color: #008080;
 }
 #background {
     background-color: #f8f6fa;
-=======
     background-color: #f8f6fa;
 }
 #background {
     background-color: #008080;
->>>>>>> 394f32b (Upload source code 1.0)
     position: fixed;
     z-index: 0;
     width: 40%;
@@ -58,22 +55,16 @@ body {
     align-items: center;
 }
 #contentBox {
-<<<<<<< HEAD
     background-color: #008080;
-=======
     background-color: #f8f6fa;
->>>>>>> 394f32b (Upload source code 1.0)
     width: 80%;
     height: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
 }
 #contentBox__product {
-<<<<<<< HEAD
     background-color: #f8f6fa;
-=======
     background-color: #008080;
->>>>>>> 394f32b (Upload source code 1.0)
     width: 37.5%;
     height: 100%;
     display: flex;
@@ -150,10 +141,7 @@ body {
 }
 #contentBox__form div:first-child p {
     text-align: center;
-<<<<<<< HEAD
     color: #f8f6fa;
-=======
->>>>>>> 394f32b (Upload source code 1.0)
 }
 #contentBox__form div:first-child p:first-child {
     font-family: RobotoBol;
@@ -162,10 +150,7 @@ body {
 }
 #contentBox__form div label {
     font-family: RobotoBol;
-<<<<<<< HEAD
     color: #f8f6fa;
-=======
->>>>>>> 394f32b (Upload source code 1.0)
 }
 #contentBox__form div input {
     font-size: 18px;
@@ -181,13 +166,10 @@ body {
     align-self: flex-end;
 }
 #contentBox__form div:nth-child(4) input {
-<<<<<<< HEAD
     background-color: #f8f6fa;
     color: #008080;
-=======
     background-color: #008080;
     color: #f8f6fa;
->>>>>>> 394f32b (Upload source code 1.0)
     font-family: RobotoBol;
     width: 100%;
 }
@@ -201,13 +183,10 @@ body {
 #contentBox__form div:last-child {
     text-align: right;
 }
-<<<<<<< HEAD
 
 #contentBox__form div:last-child p{
     color: #f8f6fa;
 }
-=======
->>>>>>> 394f32b (Upload source code 1.0)
 @media (min-width: 740px) and (max-width: 1023px) {
     
 }
