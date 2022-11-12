@@ -27,185 +27,22 @@ Mobile: max-width: 729px */
     padding: 0px;
     box-sizing: border-box;
     font-family: RobotoReg;
-    font-size: 16px;
+    font-size: 1rem;
     color: #0a0a0a;
 }
+html, body {
+    height: 100%;
+}
 body {
-    background-color: #008080;
-}
-#background {
-    background-color: #f8f6fa;
-    background-color: #f8f6fa;
-}
-#background {
-    background-color: #008080;
-    position: fixed;
-    z-index: 0;
-    width: 40%;
-    height: 100vh;
-}
-#content {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #008080!important;
 }
-#contentBox {
-    background-color: #008080;
-    background-color: #f8f6fa;
-    width: 80%;
-    height: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
+form {
+    background-color: #ffffff;
 }
-#contentBox__product {
-    background-color: #f8f6fa;
-    background-color: #008080;
-    width: 37.5%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#contentBox__product h1 {
-    font-size: 48px;
-    text-transform: uppercase;
-    font-family: RobotoBol;
-    font-style: italic;
-    margin-bottom: 16px;
-}
-#contentBox__product p:nth-child(3) {
-    text-transform: uppercase;
-    font-family: RobotoBol;
-}
-#contentBox__product img {
-    width: 160px;
-}
-@media (min-width: 740px) and (max-width: 1023px) {
-    #contentBox__product h1 {
-        font-size: 40px;
-    }
-    #contentBox__product p:nth-child(3), #contentBox__product p:nth-child(4) {
-        max-width: 160px;
-        text-align: center;
-    }
-}
-@media (max-width: 739px) {
-    #background {
-        background-color: #008080;
-        position: fixed;
-        z-index: 0;
-        width: 100%;
-        height: 20vh;
-    }
-    #contentBox {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    #contentBox__product {
-        width: 100%;
-        height: 12.5%;
-        flex-direction: row;
-        align-self: center;
-    }
-    #contentBox__product img {
-        width: 80px;
-    }
-    #contentBox__product h1 {
-        font-size: 32px;
-        margin: 0px 0px 0px 16px;
-    }
-    #contentBox__product p:nth-child(3), #contentBox__product p:nth-child(4) {
-        display: none;
-    }
-}
-#contentBox__form {
-    /* background-color: #008080; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: auto;
-    min-width: 30%;
-    line-height: 32px;
-}
-#contentBox__form div {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-}
-#contentBox__form div:first-child p {
-    text-align: center;
-    color: #f8f6fa;
-}
-#contentBox__form div:first-child p:first-child {
-    font-family: RobotoBol;
-    font-size: 48px;
-    margin-bottom: 8px;
-}
-#contentBox__form div label {
-    font-family: RobotoBol;
-    color: #f8f6fa;
-}
-#contentBox__form div input {
-    font-size: 18px;
-    height: 48px;
-    text-indent: 16px;
-    border: 1px solid grey;
-    border-radius: 5px;
-}
-#contentBox__form div a {
+form a {
     text-decoration: none;
-    color: #008080;
-    font-family: RobotoBol;
-    align-self: flex-end;
-}
-#contentBox__form div:nth-child(4) input {
-    background-color: #f8f6fa;
-    color: #008080;
-    background-color: #008080;
-    color: #f8f6fa;
-    font-family: RobotoBol;
-    width: 100%;
-}
-#contentBox__form div:nth-child(4) a {
-    align-self: center;
-    width: 100%;
-}
-#contentBox__form div:nth-child(4) input:hover {
-    cursor: pointer;
-}
-#contentBox__form div:last-child {
-    text-align: right;
-}
-
-#contentBox__form div:last-child p{
-    color: #f8f6fa;
-}
-@media (min-width: 740px) and (max-width: 1023px) {
-    
-}
-@media (max-width: 739px) {
-    #contentBox__form div:first-child p:first-child {
-        font-size: 32px;
-    }
-}
-#copyright {
-    /* background-color: blue; */
-    position: absolute;
-    width: 80%;
-    text-align: right;
-    align-self: flex-end;
-    padding: 16px;
-    color: #0a0a0a50;
-}
-@media (max-width: 739px) {
-    #copyright {
-        position: relative;
-    }
 }
