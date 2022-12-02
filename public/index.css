@@ -1,0 +1,48 @@
+/* MEDIA QUERIES */
+/* PC: min-width: 1024px
+Tablet: min-width: 740px max-width: 1023px
+Mobile: max-width: 729px */
+@font-face {
+    font-family: RobotoReg;
+    src: url(./font/roboto/Roboto-Regular.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: RobotoReg;
+    src: url(./font/roboto/Roboto-Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: RobotoBol;
+    src: url(./font/roboto/Roboto-Bold.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: RobotoBol;
+    src: url(./font/roboto/Roboto-BoldItalic.ttf);
+    font-style: italic;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: RobotoReg;
+    font-size: 1rem;
+    color: #0a0a0a;
+}
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #008080!important;
+}
+form {
+    background-color: #ffffff;
+}
+form a {
+    text-decoration: none;
+}
