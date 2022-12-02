@@ -1,7 +1,3 @@
-/* MEDIA QUERIES */
-/* PC: min-width: 1024px
-Tablet: min-width: 740px max-width: 1023px
-Mobile: max-width: 729px */
 @font-face {
     font-family: RobotoReg;
     src: url(./font/roboto/Roboto-Regular.ttf);
@@ -45,4 +41,18 @@ form {
 }
 form a {
     text-decoration: none;
+}
+.dropdown {
+    position: absolute!important;
+    top: 32px;
+    left: 32px;
+}
+.dropdown > button, .dropdown:hover > button, .dropdown:active > button {
+    background-color: #ffffff!important;
+    color: #0a0a0a!important;
+}
+.dropdown input {
+    width: 100%;
+    background: none;
+    border: 0px;
 }
