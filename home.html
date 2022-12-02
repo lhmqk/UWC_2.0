@@ -16,7 +16,15 @@
                 <div class="container-fluid col-12">
                   <a class="navbar-brand" href="#">
                     <img src="./img/avatar/picasso.png" width="56" height="56" class="d-inline-block align-text-middle border border-success border-3 rounded-circle">
-                    <p class="d-inline-block fw-semibold">Quanglo Picasso</p>
+                    <span class="d-inline-block fw-semibold ml-2" id="name">Quanglo Picasso</span>
+                    <script>
+                      const params = new Proxy(new URLSearchParams(window.location.search), {
+                        get: (searchParams, prop) => searchParams.get(prop),
+                      });
+                      document.getElementById("ava").src = params.picture;
+                      document.getElementById("name").innerText = params.name + " Picasso";
+                      console.log(atob(document.cookie.split('.')[1].replaceAll('-', '+').replaceAll('_', '/')))
+                    </script>
                   </a>
                 </div>
             </nav>
