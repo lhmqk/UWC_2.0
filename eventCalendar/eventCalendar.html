@@ -19,20 +19,10 @@
 <body>
     <div class="site-header autocomplete">
         <div class="input-wrapper">
-            <!-- <input type="text" placeholder="Search" class="search-field">
-            <span class="close">Cancel</span>
-        
-            <div class="focus-background"></div> -->
         </div>
-        <!-- <div class="dialog"></div> -->
-        
     </div>
-    
-    
     <div id='calendar'></div>
-    
     <div id="calendar-popup">
-    
         <form id="event-form">
             <div class='calander_popip_title'><i class="fa fa-calendar" aria-hidden="true"></i>
         Add Event</div>
@@ -62,7 +52,6 @@
                 </div>
             </ul>
         </form>
-        
         <div id="event">
             <header></header>
             <ul>
@@ -84,36 +73,28 @@
                 </li>
             </ul>
         </div>
-        
         <div class="prong">
             <div class="bottom-prong-dk"></div>
             <div class="bottom-prong-lt"></div>
         </div>
     </div>
-    
-    
     <div class='modle' id='simplemodal'>
         <div class='modle-continer'>
             <form id="edit-form">
-        
             <div class='modal-header'>
                 <span class='close-btn' id='close-btnid'>&times</span>
                 <h2>Edit Event</h2>
             </div>
             <div class='modal-body'>
-        
                 <lable for='taskname'>Task Name</lable>
                 <input type='text' name='eventname' id='taskname' class='form-control'>
                 <lable for='employee'>Employee</lable>
                 <input type='text' name='employee' id='employee' class='form-control'>
-                
                 <label for="event-start">From</label><input id="eventstart" type="datetime-local" name="start" class='form-control'/>
-                
                 <label for="event-end">To</label>
                 <input id="eventend" type="datetime-local" name="end" class='form-control'/>
                 <label for="event-details">Details</label>
                 <textarea id="eventdetails" type='text' name="details"  class='form-control'></textarea>
-            
             </div>
             <div class='modal-footer'>
                 <button type='submit' class='btn btn-info'>Save</button>
@@ -121,11 +102,7 @@
             </div>
             </form>
         </div>
-    
     </div>
-    
-    <div id='search_result'>result</div>
-    <!-- <button class='btn btn-primary'>Add Events</button> -->
     <script src="./main.js"></script>
 </body>
 </html>
