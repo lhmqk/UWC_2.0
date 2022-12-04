@@ -24,8 +24,8 @@
     box-sizing: border-box;
     font-family: RobotoReg;
     font-size: 18px;
-    color: #0a0a0a;
-    text-decoration: none;
+    color: #0a0a0a!important;
+    text-decoration: none!important;
 }
 body {
     background-color: #008080!important;
@@ -33,12 +33,6 @@ body {
 }
 footer li {
     font-size: 12px;
-}
-
-.dropdown {
-    position: absolute!important;
-    top: 32px;
-    left: 32px;
 }
 .dropdown > button, .dropdown:hover > button, .dropdown:active > button {
     background-color: #ffffff!important;
