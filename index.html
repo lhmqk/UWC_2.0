@@ -14,7 +14,9 @@
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Language</button>
         <ul class="dropdown-menu">
-          <li><input type="button" id="lang_vn" name="lang" data-value="vn" onclick="changeLang('vn');" value="Tiếng Việt"/></li>
+          <li>
+            <input type="button" id="lang_vn" name="lang" data-value="vn" onclick="changeLang('vn');" value="Tiếng Việt"/>
+          </li>
           <li><input type="button" id="lang_en" name="lang" data-value="en" onclick="changeLang('en');" value="English"/></li>
         </ul>
     </div>
@@ -25,8 +27,8 @@
             <p class="mb-1 fw-semibold langchange" data-key="projectTitle">URBAN WASTE COLLECTION AID</p>
             <h1 class="h2 mb-2 fw-semibold text-start" >Sign in</h1>
             <p class="mb-2 text-start">
-                New user?
-                <a href="#">Create an account</a>
+                Have no account?
+                <a href="./login">Log In using Google</a>
             </p>
             <input type="text" class="form-control mb-3 rounded-4 bg-light border-0 py-2" placeholder="Email Address" aria-label="Email Address">
             <input type="password" class="form-control mb-3 rounded-4 bg-light border-0 py-2" placeholder="Password">
