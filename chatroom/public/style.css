@@ -192,3 +192,17 @@ body {
     cursor: pointer;
     border-radius: 0px 0px 10px 0px;
 }
+.dropdown {
+    position: absolute!important;
+    top: 32px;
+    left: 32px;
+}
+.dropdown > button, .dropdown:hover > button, .dropdown:active > button {
+    background-color: #ffffff!important;
+    color: #0a0a0a!important;
+}
+.dropdown input {
+    width: 100%;
+    background: none;
+    border: 0px;
+}
