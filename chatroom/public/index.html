@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>UWC Chat Room</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="/language.js"></script>
+    <script src="./language1.js"></script>
 </head>
 <body>
     <div class="dropdown">
@@ -29,14 +29,16 @@
                     <input type="text" name="username" id="username" placeholder="Your nickname">
                 </div>
                 <div class="form-input">
-                    <button id="join-user">Join</button>
+                    <button id="join-user" class="langchange" data-key="join">Join</button>
                 </div>
             </div>
         </div>
         <div class="screen chat-screen">
             <div class="header">
-                <div class="logo">UWC Chat Room</div>
-                <button id="exit-chat">Exit</button>
+                <div class="logo langchange" data-key="innerchat" >UWC Chat Room</div>
+                <button id="exit-chat">
+                    <p class="langchange" data-key="exit">Exit</p>
+                </button>
             </div>
             <div class="messages">
                 <img src="./img/logo/4234142.png" alt="">
@@ -58,7 +60,7 @@
             </div>
             <div class="typebox">
                 <input type="text" id="message-input">
-                <button id="send-message">Send</button>
+                <button id="send-message" class="langchange" data-key="send">Send</button>
             </div>
         </div>
     </div>
