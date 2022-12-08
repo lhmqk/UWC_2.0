@@ -167,11 +167,11 @@
                     <h3>Thêm công việc</h3>
                     <ul>
                       <li>
-                        <label for="event-start"
-                          ><i aria-hidden="true"></i>Từ</label
+                        <label for="event-start">
+                          <i aria-hidden="true"></i>Từ</label
                         >
                         <input
-                          id="event-start"
+                          id="new-taskFrom"
                           type="datetime-local"
                           name="start"
                         />
@@ -181,7 +181,7 @@
                           ><i aria-hidden="true"></i>Đến</label
                         >
                         <input
-                          id="event-end"
+                          id="new-taskTo"
                           type="datetime-local"
                           name="end"
                         />
@@ -190,24 +190,20 @@
                         <label for="event-title"
                           ><i aria-hidden="true"></i>Công việc</label
                         >
-                        <input id="new-task" type="text" name="title" />
+                        <input id="new-taskName" type="text" name="title" />
                       </li>
                       <li>
                         <label for="event-employee"
                           ><i aria-hidden="true"></i>Nhân viên</label
                         >
-                        <input
-                          id="event-employee"
-                          type="text"
-                          name="employee"
-                        />
+                        <input id="new-taskEmp" type="text" name="employee" />
                       </li>
                       <li>
                         <label for="event-details"
                           ><i aria-hidden="true"></i>Mô tả</label
                         >
                         <textarea
-                          id="event-details"
+                          id="new-taskDesc"
                           name="details"
                           rows="4"
                         ></textarea>
@@ -222,15 +218,25 @@
                   <h3>Cần làm</h3>
                   <ul id="incomplete-tasks">
                     <li>
-                      <input type="checkbox" /><label>Dọn rác C6</label
-                      ><input type="text" />
+                      <input type="checkbox" />
+                      <label>Dọn rác C6</label>
+                      <label>2022-12-06T08:48</label>
+                      <label>2022-12-07T21:32</label>
+                      <label>MinhLe</label>
+                      <label>Đi dọn hết rác C6</label>
+                      <input type="text" />
                       <div>
                         <button class="edit">Sửa</button>
                         <button class="delete">Xóa</button>
                       </div>
                     </li>
                     <li>
-                      <input type="checkbox" /><label>Tập kết cổng 1</label>
+                      <input type="checkbox" />
+                      <label>Tập kết cổng 1</label>
+                      <label>2022-12-06T08:48</label>
+                      <label>2022-12-07T21:32</label>
+                      <label>MinhLe</label>
+                      <label>Xách rác ra cổng 1</label>
                       <input type="text" value="Go Shopping" />
                       <div>
                         <button class="edit">Sửa</button>
@@ -242,8 +248,13 @@
                   <h3>Hoàn thành</h3>
                   <ul id="completed-tasks">
                     <li>
-                      <input type="checkbox" checked /><label>Dọn rác C5</label
-                      ><input type="text" />
+                      <input type="checkbox" checked />
+                      <label>Dọn rác C5</label>
+                      <label>2022-12-06T08:48</label>
+                      <label>2022-12-07T21:32</label>
+                      <label>MinhLe</label>
+                      <label>Đi dọn hết rác C5</label>
+                      <input type="text" />
                       <div>
                         <button class="edit">Sửa</button>
                         <button class="delete">Xóa</button>
