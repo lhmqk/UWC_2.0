@@ -31,14 +31,16 @@ $(function () {
     $(".assign-section").removeClass("show");
     $(".route-section").removeClass("show");
     $(".message-section").removeClass("show");
+    $(".viewWrapperTask").removeClass("show");
+    $(".viewWrapperEmp").addClass("show");
     $(".main-container").scrollTop(0);
     $(".sidebar-link").removeClass("is-active");
     $(".view").addClass("is-active");
   });
   $(".assign").on("click", function (e) {
     $(".home-section").removeClass("show");
-    $(".view-section").removeClass("show");
-    $(".assign-section").addClass("show");
+    $(".view-section").addClass("show");
+    $(".assign-section").removeClass("show");
     $(".route-section").removeClass("show");
     $(".message-section").removeClass("show");
     $(".main-container").scrollTop(0);
@@ -64,5 +66,14 @@ $(function () {
     $(".main-container").scrollTop(0);
     $(".sidebar-link").removeClass("is-active");
     $(".message").addClass("is-active");
+  });
+
+  $(".loginBtn").on("click", function (e) {
+    $(".main-container").scrollTop(0);
+    $(".loginWrapper").removeClass("show");
+  });
+  $(".user-settings").on("click", function (e) {
+    $(".main-container").scrollTop(0);
+    $(".loginWrapper").addClass("show");
   });
 });

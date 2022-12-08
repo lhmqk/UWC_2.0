@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/route.css" />
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/view.css" />
+    <link rel="stylesheet" href="./css/login.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
@@ -38,7 +39,7 @@
                   d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"
                 />
               </svg>
-              Theo dõi
+              Hiển thị
             </a>
             <a class="sidebar-link assign" href="#">
               <svg
@@ -58,7 +59,7 @@
                   d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"
                 />
               </svg>
-              Chỉ định
+              Phân công
             </a>
             <a class="sidebar-link route" href="#">
               <svg
@@ -75,7 +76,7 @@
                   d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"
                 />
               </svg>
-              Tìm đường
+              Tuyến đường
             </a>
             <a class="sidebar-link message" href="#">
               <svg
@@ -102,8 +103,12 @@
             <input type="text" placeholder="Tìm kiếm" />
           </div>
           <div class="user-settings">
-            <img class="user-img" src="./img/logo/picasso.png" alt="" />
-            <div class="user-name">Quanglo P.</div>
+            <img
+              class="user-img"
+              src="https://www.gravatar.com/avatar/b3568450826559f6ce26b424b8283279.jpg?size=240&d=https%3A%2F%2Fwww.artstation.com%2Fassets%2Fdefault_avatar.jpg"
+              alt=""
+            />
+            <div class="user-name">User</div>
             <svg viewBox="0 0 492 492" fill="currentColor">
               <path
                 d="M484.13 124.99l-16.11-16.23a26.72 26.72 0 00-19.04-7.86c-7.2 0-13.96 2.79-19.03 7.86L246.1 292.6 62.06 108.55c-5.07-5.06-11.82-7.85-19.03-7.85s-13.97 2.79-19.04 7.85L7.87 124.68a26.94 26.94 0 000 38.06l219.14 219.93c5.06 5.06 11.81 8.63 19.08 8.63h.09c7.2 0 13.96-3.57 19.02-8.63l218.93-219.33A27.18 27.18 0 00492 144.1c0-7.2-2.8-14.06-7.87-19.12z"
@@ -122,47 +127,168 @@
           </div>
         </div>
         <div class="main-container">
+          <div class="loginWrapper show">
+            <div class="loginBox">
+              <div class="login-box">
+                <h2>Chào mừng quay trở lại</h2>
+                <form>
+                  <div class="user-box">
+                    <input type="text" name="" required="" />
+                    <label>Tên đăng nhập</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="password" name="" required="" />
+                    <label>Mật khẩu</label>
+                  </div>
+                  <a class="googleLoginBtn">Đăng nhập bằng Google</a>
+                  <a class="loginBtn"> Đăng nhập </a>
+                </form>
+              </div>
+            </div>
+          </div>
           <div class="home-section section show anim">
             <div id="homeWrapper">
               <img src="./img/logo/4234142.png" />
               <footer>
                 <div class="footerCol">
-                  <h6>About Us:</h6>
+                  <h6>Giới thiệu:</h6>
                   <ul>
-                    <li>Development Team from HCMUT</li>
-                    <li>Software Engineering - Class CC05</li>
+                    <li>Đội ngũ phát triển từ ĐHBK-TPHCM</li>
+                    <li>Lớp CC05-Công nghệ phần mềm</li>
                   </ul>
                 </div>
 
                 <div class="footerCol">
-                  <h6>System Information:</h6>
+                  <h6>Về hệ thống:</h6>
                   <ul>
-                    <li>Version 2.0</li>
-                    <li>Enhancing from Version 1.0 with reuse data</li>
+                    <li>Phiên bản 2.0</li>
+                    <li>Nâng cấp và tái sử dụng dữ liệu từ bản 1.0</li>
                   </ul>
                 </div>
 
                 <div class="footerCol">
-                  <h6>Contact Us:</h6>
+                  <h6>Liên lạc:</h6>
                   <ul>
                     <li>Email: artists@hcmut.edu.vn</li>
-                    <li>Tel: 0254.3456.789</li>
+                    <li>SĐT: 0254.3456.789</li>
                   </ul>
                 </div>
               </footer>
             </div>
           </div>
-
           <div class="view-section section anim">
-            <div class="viewWrapper">
+            <div class="viewWrapperEmp show">
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img src="./img/logo/picasso.png" />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: QuangLo</p>
+                  <p class="empBoxInfoId">MSNV: 2052113</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lái xe</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://cdn.britannica.com/18/136518-050-CD0E49C6/The-Beatles-Ringo-Starr-Paul-McCartney-George.jpg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: LongTon</p>
+                  <p class="empBoxInfoId">MSNV: 2052114</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lao công</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://i.discogs.com/UooWvTWsiyzFDhmuT0SUkpxLZBGcsyMcatV8uiGj04g/rs:fit/g:sm/q:90/h:450/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTU5Nzky/LTE0MDAwNjE4NjIt/OTY5Mi5qcGVn.jpeg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: KhoaT</p>
+                  <p class="empBoxInfoId">MSNV: 2052115</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lao công</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://kenh14cdn.com/thumb_w/660/203336854389633024/2022/6/16/photo-2-1655348630903722809076.jpg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: CuCai</p>
+                  <p class="empBoxInfoId">MSNV: 2052007</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lao công</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://cdn.britannica.com/41/197341-050-4859B808/The-Rolling-Stones-Bill-Wyman-Keith-Richards-1964.jpg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: MinhLe</p>
+                  <p class="empBoxInfoId">MSNV: 205200c</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lao công</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://www.billboard.com/wp-content/uploads/media/10-chuck-berry-portrait-billboard-1240.jpg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: aTan</p>
+                  <p class="empBoxInfoId">MSNV: 2052sos</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lao công</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://123oclock4oclockrock.files.wordpress.com/2019/01/jimihendrix-portrait.jpg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: TruongB</p>
+                  <p class="empBoxInfoId">MSNV: 2052111</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lái cực mạnh</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://www.biography.com/.image/t_share/MTgwNTA2Nzk2MjgzMTQzMjU2/gettyimages-476549927.jpg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: 4Hai</p>
+                  <p class="empBoxInfoId">MSNV: 2052444</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lái dữ</p>
+                </div>
+              </div>
+              <div class="empBox">
+                <div class="empBoxImg">
+                  <img
+                    src="https://www.biography.com/.image/t_share/MTcyNDMwMjQzNjk1NDM2ODgz/little-richard-profile.jpg"
+                  />
+                </div>
+                <div class="empBoxInfo">
+                  <p class="empBoxInfoName">Tên: TungV</p>
+                  <p class="empBoxInfoId">MSNV: 2052ddd</p>
+                  <p class="empBoxInfoRole">Chức vụ: Lao công</p>
+                </div>
+              </div>
+            </div>
+            <div class="viewWrapperTask">
               <h2>Công việc</h2>
               <div class="viewPlit">
                 <div>
-                  <!-- <h3>Thêm công việc</h3>
-                  <p style="margin-top: 8px">
-                    <input id="new-task" type="text" />
-                    <button>Thêm</button>
-                  </p> -->
                   <form id="event-form">
                     <h3>Thêm công việc</h3>
                     <ul>
@@ -266,7 +392,7 @@
             </div>
           </div>
 
-          <div class="assign-section section anim">Assign</div>
+          <div class="assign-section section anim">Phân công</div>
 
           <div class="route-section section anim">
             <iframe

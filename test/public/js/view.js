@@ -7,6 +7,14 @@ var addButton = document.getElementById("addTaskBtn"); //form-button
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
 
+var empBoxList = document.querySelectorAll(".empBox");
+for (let i = 0; i < empBoxList.length; i++) {
+  empBoxList[i].addEventListener("click", function () {
+    document.querySelector(".viewWrapperEmp").classList.remove("show");
+    document.querySelector(".viewWrapperTask").classList.add("show");
+  });
+}
+
 //New Task List Item
 var createNewTaskElement = function (
   taskNameString,

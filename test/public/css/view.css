@@ -1,13 +1,19 @@
-.viewWrapper {
-  display: block;
+.view-section {
+  margin: auto 64px;
+}
+.viewWrapperTask {
+  display: none;
   margin: auto;
   background-color: #252936;
   padding: 0px 10px 10px 10px;
   border-radius: 10px;
   width: 100%;
 }
-
-.viewWrapper h2 {
+.viewWrapperTask.show {
+  display: flex;
+  flex-direction: column;
+}
+.viewWrapperTask h2 {
   text-align: center;
   padding-top: 16px;
   margin-bottom: 16px;
@@ -20,7 +26,7 @@
 .viewPlit > div {
   flex-basis: 45%;
 }
-.viewWrapper ul {
+.viewWrapperTask ul {
   margin: 0px 0px 16px 0px;
   padding: 0;
   display: flex;
@@ -28,30 +34,30 @@
   align-items: center;
 }
 
-.viewWrapper li * {
+.viewWrapperTask li * {
   float: left;
 }
-.viewWrapper li > div {
+.viewWrapperTask li > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.viewWrapper li > div > button {
+.viewWrapperTask li > div > button {
   margin: 4px 0px;
 }
-.viewWrapper li,
-.viewWrapper h3 {
+.viewWrapperTask li,
+.viewWrapperTask h3 {
   clear: both;
   list-style: none;
 }
 
-.viewWrapper input,
-.viewWrapper button {
+.viewWrapperTask input,
+.viewWrapperTask button {
   outline: none;
 }
 
-.viewWrapper button {
+.viewWrapperTask button {
   background: none;
   border: 0px;
   color: #888;
@@ -62,14 +68,14 @@
   cursor: pointer;
 }
 
-.viewWrapper button:hover {
+.viewWrapperTask button:hover {
   color: #333;
 }
 
 /* Heading */
 
-.viewWrapper h3,
-.viewWrapper label {
+.viewWrapperTask h3,
+.viewWrapperTask label {
   color: #808191;
   font-weight: 700;
   font-size: 15px;
@@ -77,10 +83,10 @@
   margin: 0;
   text-transform: uppercase;
 }
-.viewWrapper h3 {
+.viewWrapperTask h3 {
   border-bottom: 2px solid #008080;
 }
-.viewWrapper input[type="text"] {
+.viewWrapperTask input[type="text"] {
   margin: 0;
   font-size: 16px;
   line-height: 18px;
@@ -93,29 +99,29 @@
   color: #888;
 }
 
-.viewWrapper input[type="text"]:focus {
+.viewWrapperTask input[type="text"]:focus {
   color: #333;
 }
 
 /* New Task */
 
-.viewWrapper label {
+.viewWrapperTask label {
   display: block;
   /* margin: 0 0 20px; */
 }
 
-.viewWrapper input#new-task {
+.viewWrapperTask input#new-task {
   float: left;
   width: 318px;
 }
 
-.viewWrapper p > button:hover {
+.viewWrapperTask p > button:hover {
   color: #0fc57c;
 }
 
 /* Task list */
 
-.viewWrapper li {
+.viewWrapperTask li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -125,70 +131,70 @@
   border-bottom: 1px solid rgba(18, 21, 39, 0.86);
 }
 
-.viewWrapper li > input[type="checkbox"] {
+.viewWrapperTask li > input[type="checkbox"] {
   margin: 0 10px;
   /* position: relative;
   top: 15px; */
 }
 
-.viewWrapper li > label {
+.viewWrapperTask li > label {
   font-size: 14px;
 }
 
-.viewWrapper li > input[type="text"] {
+.viewWrapperTask li > input[type="text"] {
   width: 226px;
 }
 
-.viewWrapper li > .delete:hover {
+.viewWrapperTask li > .delete:hover {
   color: #cf2323;
 }
 
 /* Completed */
 
-.viewWrapper #completed-tasks label {
+.viewWrapperTask #completed-tasks label {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
 
-.viewWrapper ul li input[type="text"] {
+.viewWrapperTask ul li input[type="text"] {
   display: none;
 }
-.viewWrapper form ul li input[type="text"] {
+.viewWrapperTask form ul li input[type="text"] {
   display: block;
 }
-.viewWrapper ul li.editMode input[type="text"] {
+.viewWrapperTask ul li.editMode input[type="text"] {
   display: block;
 }
 
-.viewWrapper ul li.editMode label {
+.viewWrapperTask ul li.editMode label {
   display: none;
 }
-.viewWrapper form {
+.viewWrapperTask form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40%;
   margin: auto;
 }
-.viewWrapper form h3,
-.viewWrapper form ul {
+.viewWrapperTask form h3,
+.viewWrapperTask form ul {
   width: 100%;
 }
-.viewWrapper form li,
-.viewWrapper form div {
+.viewWrapperTask form li,
+.viewWrapperTask form div {
   display: flex;
   flex-direction: row;
   width: 100%;
   border: none;
 }
-.viewWrapper form li > label {
+.viewWrapperTask form li > label {
   flex-basis: 30%;
   text-transform: none;
 }
-.viewWrapper form li > input,
-.viewWrapper form li > textarea {
+.viewWrapperTask form li > input,
+.viewWrapperTask form li > textarea {
   flex-basis: 70%;
   background-color: #353340;
   border: none;
@@ -197,13 +203,13 @@
   color: #eee;
   font-size: 16px;
 }
-.viewWrapper form input[type="text"],
-.viewWrapper form input[type="text"]:focus {
+.viewWrapperTask form input[type="text"],
+.viewWrapperTask form input[type="text"]:focus {
   background-color: #353340;
   color: #eee;
   border: none;
 }
-.viewWrapper form div button {
+.viewWrapperTask form div button {
   width: 100%;
   margin-top: 16px;
   height: 32px;
@@ -214,4 +220,42 @@
 }
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
+}
+.viewWrapperEmp {
+  display: none;
+}
+.viewWrapperEmp.show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  background-color: #252936;
+  padding: 0px 10px 10px 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+.viewWrapperEmp .empBox {
+  background-color: #353340;
+  color: #808191;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 30%;
+  justify-content: space-around;
+  align-items: center;
+  margin: 8px 0%;
+  border-radius: 10px;
+}
+.viewWrapperEmp .empBox:hover {
+  cursor: pointer;
+}
+.viewWrapperEmp .empBox > div:nth-child(1) {
+  flex-basis: 30%;
+  margin: 8px 0px;
+}
+.viewWrapperEmp .empBox > div:nth-child(1) > img {
+  border-radius: 10px;
+}
+.viewWrapperEmp .empBox > div:nth-child(2) > p {
+  line-height: 24px;
 }

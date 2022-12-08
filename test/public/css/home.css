@@ -1,5 +1,6 @@
 .home-section {
-  margin: auto;
+  margin: auto 64px;
+  /* width: 100%; */
 }
 #homeWrapper {
   display: flex;
@@ -19,6 +20,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  width: 100%;
   padding-top: 8px;
   border-top: 4px solid #008080;
 }
@@ -27,7 +29,11 @@
   display: flex;
   flex-direction: column;
 }
+.footerCol h6 {
+  font-size: 16px;
+}
 .footerCol li {
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 12px;
 }
