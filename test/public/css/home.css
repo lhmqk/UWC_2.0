@@ -1,0 +1,33 @@
+.home-section {
+  margin: auto;
+}
+#homeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #252936;
+  padding: 1rem;
+  border-radius: 10px;
+}
+#homeWrapper > img {
+  height: 16rem;
+  filter: grayscale(50%);
+}
+#homeWrapper > footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 8px;
+  border-top: 4px solid #008080;
+}
+#homeWrapper > footer > .footerCol {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.footerCol li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

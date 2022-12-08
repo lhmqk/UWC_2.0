@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UWC - Homepage</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/chat.css" />
+    <link rel="stylesheet" href="./css/route.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/view.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <span class="logo">S</span>
+        <a class="logo-expand" href="#">UWC 2.0</a>
+        <div class="side-wrapper">
+          <div class="side-title">MENU</div>
+          <div class="side-menu">
+            <a class="sidebar-link home is-active" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"
+                />
+              </svg>
+              Trang chủ
+            </a>
+            <a class="sidebar-link view" href="#">
+              <svg fill="currentColor" viewBox="0 0 16 16">
+                <path
+                  d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"
+                />
+              </svg>
+              Theo dõi
+            </a>
+            <a class="sidebar-link assign" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"
+                />
+                <path
+                  d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"
+                />
+              </svg>
+              Chỉ định
+            </a>
+            <a class="sidebar-link route" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"
+                />
+              </svg>
+              Tìm đường
+            </a>
+            <a class="sidebar-link message" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                />
+                <path
+                  d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                />
+              </svg>
+              Tin nhắn
+            </a>
+          </div>
+        </div>
+        <div class="side-wrapper"></div>
+      </div>
+      <div class="wrapper">
+        <div class="header">
+          <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm" />
+          </div>
+          <div class="user-settings">
+            <img class="user-img" src="./img/logo/picasso.png" alt="" />
+            <div class="user-name">Quanglo P.</div>
+            <svg viewBox="0 0 492 492" fill="currentColor">
+              <path
+                d="M484.13 124.99l-16.11-16.23a26.72 26.72 0 00-19.04-7.86c-7.2 0-13.96 2.79-19.03 7.86L246.1 292.6 62.06 108.55c-5.07-5.06-11.82-7.85-19.03-7.85s-13.97 2.79-19.04 7.85L7.87 124.68a26.94 26.94 0 000 38.06l219.14 219.93c5.06 5.06 11.81 8.63 19.08 8.63h.09c7.2 0 13.96-3.57 19.02-8.63l218.93-219.33A27.18 27.18 0 00492 144.1c0-7.2-2.8-14.06-7.87-19.12z"
+              ></path>
+            </svg>
+            <div class="notify">
+              <div class="notification"></div>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M18.707 8.796c0 1.256.332 1.997 1.063 2.85.553.628.73 1.435.73 2.31 0 .874-.287 1.704-.863 2.378a4.537 4.537 0 01-2.9 1.413c-1.571.134-3.143.247-4.736.247-1.595 0-3.166-.068-4.737-.247a4.532 4.532 0 01-2.9-1.413 3.616 3.616 0 01-.864-2.378c0-.875.178-1.682.73-2.31.754-.854 1.064-1.594 1.064-2.85V8.37c0-1.682.42-2.781 1.283-3.858C7.861 2.942 9.919 2 11.956 2h.09c2.08 0 4.204.987 5.466 2.625.82 1.054 1.195 2.108 1.195 3.745v.426zM9.074 20.061c0-.504.462-.734.89-.833.5-.106 3.545-.106 4.045 0 .428.099.89.33.89.833-.025.48-.306.904-.695 1.174a3.635 3.635 0 01-1.713.731 3.795 3.795 0 01-1.008 0 3.618 3.618 0 01-1.714-.732c-.39-.269-.67-.694-.695-1.173z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="main-container">
+          <div class="home-section section show anim">
+            <div id="homeWrapper">
+              <img src="./img/logo/4234142.png" />
+              <footer>
+                <div class="footerCol">
+                  <h6>About Us:</h6>
+                  <ul>
+                    <li>Development Team from HCMUT</li>
+                    <li>Software Engineering - Class CC05</li>
+                  </ul>
+                </div>
+
+                <div class="footerCol">
+                  <h6>System Information:</h6>
+                  <ul>
+                    <li>Version 2.0</li>
+                    <li>Enhancing from Version 1.0 with reuse data</li>
+                  </ul>
+                </div>
+
+                <div class="footerCol">
+                  <h6>Contact Us:</h6>
+                  <ul>
+                    <li>Email: artists@hcmut.edu.vn</li>
+                    <li>Tel: 0254.3456.789</li>
+                  </ul>
+                </div>
+              </footer>
+            </div>
+          </div>
+
+          <div class="view-section section anim">
+            <div class="viewWrapper">
+              <h2>Công việc</h2>
+              <div class="viewPlit">
+                <div>
+                  <!-- <h3>Thêm công việc</h3>
+                  <p style="margin-top: 8px">
+                    <input id="new-task" type="text" />
+                    <button>Thêm</button>
+                  </p> -->
+                  <form id="event-form">
+                    <h3>Thêm công việc</h3>
+                    <ul>
+                      <li>
+                        <label for="event-start"
+                          ><i aria-hidden="true"></i>Từ</label
+                        >
+                        <input
+                          id="event-start"
+                          type="datetime-local"
+                          name="start"
+                        />
+                      </li>
+                      <li>
+                        <label for="event-end"
+                          ><i aria-hidden="true"></i>Đến</label
+                        >
+                        <input
+                          id="event-end"
+                          type="datetime-local"
+                          name="end"
+                        />
+                      </li>
+                      <li>
+                        <label for="event-title"
+                          ><i aria-hidden="true"></i>Công việc</label
+                        >
+                        <input id="new-task" type="text" name="title" />
+                      </li>
+                      <li>
+                        <label for="event-employee"
+                          ><i aria-hidden="true"></i>Nhân viên</label
+                        >
+                        <input
+                          id="event-employee"
+                          type="text"
+                          name="employee"
+                        />
+                      </li>
+                      <li>
+                        <label for="event-details"
+                          ><i aria-hidden="true"></i>Mô tả</label
+                        >
+                        <textarea
+                          id="event-details"
+                          name="details"
+                          rows="4"
+                        ></textarea>
+                      </li>
+                      <div class="button">
+                        <button id="addTaskBtn" type="submit">Thêm</button>
+                      </div>
+                    </ul>
+                  </form>
+                </div>
+                <div>
+                  <h3>Cần làm</h3>
+                  <ul id="incomplete-tasks">
+                    <li>
+                      <input type="checkbox" /><label>Dọn rác C6</label
+                      ><input type="text" />
+                      <div>
+                        <button class="edit">Sửa</button>
+                        <button class="delete">Xóa</button>
+                      </div>
+                    </li>
+                    <li>
+                      <input type="checkbox" /><label>Tập kết cổng 1</label>
+                      <input type="text" value="Go Shopping" />
+                      <div>
+                        <button class="edit">Sửa</button>
+                        <button class="delete">Xóa</button>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <h3>Hoàn thành</h3>
+                  <ul id="completed-tasks">
+                    <li>
+                      <input type="checkbox" checked /><label>Dọn rác C5</label
+                      ><input type="text" />
+                      <div>
+                        <button class="edit">Sửa</button>
+                        <button class="delete">Xóa</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="assign-section section anim">Assign</div>
+
+          <div class="route-section section anim">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501726.251541797!2d106.69522764999999!3d10.754792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2zSOG7kyBDaMOtIE1pbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1670414530840!5m2!1svi!2s"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div class="message-section section anim">
+            <div class="app">
+              <div class="screen join-screen active">
+                <div class="form">
+                  <img src="./img/logo/4234142.png" alt="" />
+                  <h2 class="langchange" data-key="chatroom">
+                    Tham gia phòng chat UWC
+                  </h2>
+                  <div class="form-input">
+                    <label class="langchange" data-key="name"
+                      >Hãy nhập biệt danh của bạn:</label
+                    >
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      placeholder="Biệt danh của bạn"
+                    />
+                  </div>
+                  <div class="form-input">
+                    <button id="join-user" class="langchange" data-key="join">
+                      Tham gia
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="screen chat-screen">
+                <div class="header">
+                  <div class="logo langchange" data-key="innerchat">
+                    Phòng chat UWC
+                  </div>
+                  <button id="exit-chat">
+                    <p>Thoát</p>
+                  </button>
+                </div>
+                <div class="messages">
+                  <img src="./img/logo/4234142.png" alt="" />
+                </div>
+                <div class="typebox">
+                  <input type="text" id="message-input" />
+                  <button id="send-message" class="langchange" data-key="send">
+                    Gửi
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <script
+              type="text/javascript"
+              src="socket.io/socket.io.js"
+            ></script>
+            <script type="text/javascript" src="code.js"></script>
+            <script>
+              var joininput = document.getElementById("username");
+              joininput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("join-user").click();
+                }
+              });
+
+              var sendinput = document.getElementById("message-input");
+              sendinput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("send-message").click();
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/view.js"></script>
+  </body>
+</html>

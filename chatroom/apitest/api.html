@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="event-form">
+      <div class="calander_popip_title">
+        <i class="fa fa-calendar" aria-hidden="true"></i> Add Event
+      </div>
+      <ul>
+        <li>
+          <label for="event-start"
+            ><i class="fa fa-bell-o" aria-hidden="true"></i>From</label
+          >
+          <input
+            id="event-start"
+            class="form-control"
+            type="datetime-local"
+            name="start"
+          />
+        </li>
+        <li>
+          <label for="event-end"
+            ><i class="fa fa-bell-slash" aria-hidden="true"></i>To</label
+          >
+          <input
+            id="event-end"
+            class="form-control"
+            type="datetime-local"
+            name="end"
+          />
+        </li>
+        <li>
+          <label for="event-title"
+            ><i class="fa fa-calendar-minus-o" aria-hidden="true"></i>Event
+            Name</label
+          >
+          <input
+            id="event-title"
+            class="form-control"
+            type="text"
+            name="title"
+          />
+        </li>
+        <li>
+          <label for="event-employee"
+            ><i class="fa fa-map-marker" aria-hidden="true"></i>Employee</label
+          >
+          <input
+            id="event-employee"
+            class="form-control"
+            type="text"
+            name="employee"
+          />
+        </li>
+        <li>
+          <label for="event-details"
+            ><i class="fa fa-info-circle" aria-hidden="true"></i
+            >Description</label
+          >
+          <textarea
+            id="event-details"
+            class="form-control"
+            name="details"
+          ></textarea>
+        </li>
+        <div class="button">
+          <input type="submit" class="form-control submit_btn" />
+        </div>
+      </ul>
+    </form>
+    <script src="./api.js"></script>
+  </body>
+</html>

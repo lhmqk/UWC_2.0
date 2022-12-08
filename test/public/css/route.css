@@ -1,0 +1,13 @@
+.route-section > iframe {
+  border-radius: 10px;
+  background-color: #252936;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.route-section.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  filter: saturate(50%);
+}
