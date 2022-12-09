@@ -255,6 +255,10 @@
 }
 .viewWrapperEmp .empBox > div:nth-child(1) > img {
   border-radius: 10px;
+  min-width: 4rem;
+  min-height: 4rem;
+  max-width: 4rem;
+  max-height: 4rem;
 }
 .viewWrapperEmp .empBox > div:nth-child(2) > p {
   line-height: 24px;

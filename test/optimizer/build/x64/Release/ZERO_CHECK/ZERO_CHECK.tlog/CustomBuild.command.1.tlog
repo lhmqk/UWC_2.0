@@ -1,0 +1,10 @@
+^C:\USERS\NGUYE\UWC_2.0\TEST\OPTIMIZER\BUILD\CMAKEFILES\0C9217077D12FEE339A32504726E86C5\GENERATE.STAMP.RULE
+setlocal
+C:\msys64\ucrt64\bin\cmake.exe -SC:/Users/nguye/UWC_2.0/test/optimizer -BC:/Users/nguye/UWC_2.0/test/optimizer/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/nguye/UWC_2.0/test/optimizer/build/nativeAddon.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

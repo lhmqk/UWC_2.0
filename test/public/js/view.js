@@ -3,6 +3,7 @@ var taskInputFrom = document.getElementById("new-taskFrom"); //new-taskName
 var taskInputTo = document.getElementById("new-taskTo"); //new-taskName
 var taskInputEmp = document.getElementById("new-taskEmp"); //new-taskName
 var taskInputDesc = document.getElementById("new-taskDesc"); //new-taskName
+var taskInputLoc = document.getElementById("diachi");
 var addButton = document.getElementById("addTaskBtn"); //form-button
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
@@ -79,6 +80,15 @@ var createNewTaskElement = function (
 };
 
 //Add a new task
+async function assignTaskREST(body) {
+  return fetch("/api/assignTask", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    body: body
+  });
+}
 var addTask = function () {
   console.log("Add task...");
   //Create a new list item with the text from #new-task:
@@ -86,9 +96,20 @@ var addTask = function () {
     taskInputName.value,
     taskInputFrom.value,
     taskInputTo.value,
-    taskInputEmp.value,
+    janitorEmail.substr(0, 3),
     taskInputDesc.value
   );
+
+  assignTaskREST(JSON.stringify({
+    jobname: taskInputName.value,
+    start: taskInputFrom.value,
+    end: taskInputTo.value,
+    description: taskInputDesc.value,
+    location: taskInputLoc.value,
+    workerEmail: janitorEmail,
+    assignEmail: backofficerEmail
+  }));
+  
   //Append listItem to incompleteTasksHolder
   incompleteTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
@@ -146,7 +167,7 @@ var taskCompleted = function () {
   //Append the task list item to the #completed-tasks
   var listItem = this.parentNode;
   completedTasksHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskIncomplete);
+  //bindTaskEvents(listItem, taskIncomplete);
 };
 
 //Mark a task as incomplete

@@ -1,0 +1,3 @@
+C:/Users/nguye/UWC_2.0/test/optimizer/build/CMakeFiles/nativeAddon.dir
+C:/Users/nguye/UWC_2.0/test/optimizer/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/nguye/UWC_2.0/test/optimizer/build/CMakeFiles/ZERO_CHECK.dir
