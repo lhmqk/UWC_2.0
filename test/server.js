@@ -1,19 +1,26 @@
 const express = require("express");
 const path = require("path");
 const axios = require('axios');
-const querystring = require('query-string');
 const { readFileSync } = require("fs");
 const jwt = require('json-web-token');
-
 const app = express();
+const sqlite3 = require('sqlite3');
 const server = require("https").createServer({
-    cert: readFileSync("ssl/cert.pem"),
-    key: readFileSync("ssl/key.pem")
+    cert: readFileSync(path.join(__dirname, "/ssl/cert.pem")),
+    key: readFileSync(path.join(__dirname, "/ssl/key.pem"))
 }, app);
+
+const db = new sqlite3.Database(path.join(__dirname, "database.db"));
+
+db.serialize(() => {
+    db.run("CREATE TABLE IF NOT EXISTS userinfo (msnv INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE, fullname TEXT, role TEXT, picture TEXT)");
+    db.run("CREATE TABLE IF NOT EXISTS tasks (taskid INTEGER PRIMARY KEY AUTOINCREMENT, jobname TEXT, start TEXT, end TEXT, description TEXT, assignEmail TEXT, workerEmail TEXT, location TEXT, status TEXT)");
+    db.run("INSERT or IGNORE INTO userinfo(email, fullname, role, picture) VALUES (?,?,?,?)", ["binh.nguyen288@hcmut.edu.vn", "Bình Nguyễn Thế", "backofficer", "https://lh3.googleusercontent.com/a/AEdFTp5y1U79SgAUua4YXm0yX2JnW-Z4XoHHgHZ6L18z=s96-c"]);
+});
 
 const io = require("socket.io")(server);
 
-app.use(express.static(path.join(__dirname+"/public")));
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.json())
 
 io.on("connection", function(socket){
@@ -51,81 +58,88 @@ async function getDistanceMatrix(points) {
 const JWT_SECRET = "uwc2 is da best";
 const CLIENT_ID = '126370380117-jot44828cqfii06v3narofen8s2q5h51.apps.googleusercontent.com';
 const CLIENT_SECRET = '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';
-const googleAuthUrl = `${querystring.stringify({
+const googleAuthUrl = `${new URLSearchParams({
     redirect_uri: 'https://uwc.ddns.net/login/callback',
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
     grant_type: "authorization_code"    
-})}&code=`;
-
+}).toString()}&code=`;
 app.get('/login/callback', async (req, res) => {
     try {
         const { data } = await axios.post('https://oauth2.googleapis.com/token', googleAuthUrl + req.query.code, {
             headers: { 'Accept-Encoding': ''}
         });
         const jsonstr = Buffer.from(data.id_token.split('.')[1], "base64url").toString("utf-8");
-        const {name, picture, email} = JSON.parse(jsonstr);
-        const { error, value } = jwt.encode(JWT_SECRET, JSON.stringify({ email }));
-        if (error) throw error;
-        res.cookie("info", value, {
-            maxAge: 3600 * 1000,
-            secure: true
-        }).redirect(`/?${querystring.stringify({
-            picture,
-            name,
-        })}`);
+        const { name, picture, email } = JSON.parse(jsonstr);
+        
+        db.run("INSERT or IGNORE INTO userinfo(email, fullname, role, picture) VALUES (?,?,?,?)", [email, name, "janitor", picture], (err) => {
+            if (err) return;
+            
+            const { error, value } = jwt.encode(JWT_SECRET, JSON.stringify({ email }));
+            if (error) throw error;
+            res.cookie("info", value, {
+                maxAge: 3600 * 1000,
+                secure: true,
+                httpOnly: true
+            }).redirect(`/?${new URLSearchParams({
+                picture,
+                name,
+            }).toString()}`);
+        });
+       
+        
     } catch (e) {
         console.log(e);
     }
 });
-const nativeAddon = require('./optimizer/build/Release/nativeAddon');
+const nativeAddon = require(path.join(__dirname, '/build/Release/nativeAddon'));
 app.get("/api/optimalRoute", async (req, res) => {
-    const { data } = await axios({
-        method: "GET",
-        url: "http://localhost/api/getTasks.php"
+
+    db.all("SELECT * FROM tasks", async (err, data) => {
+        if (err) {
+            res.end("error");
+            return;
+        }
+        const points = ["10.7590557,106.658573", ...data.filter(v => v.status === "completed").map(v => v.location.split(";")[0])];
+        const dist = await getDistanceMatrix(points);
+        const ret = nativeAddon.shortestRoute(dist, points.length).split(',');
+        res.json([ret[0], ret[1], ret[2], ...ret.slice(3).map(v => points[v])]);
     });
-    const points = ["10.7590557,106.658573", ...data.filter(v => v.status === "completed").map(v => v.location.split(";")[0])];
-    const dist = await getDistanceMatrix(points);
-    const ret = nativeAddon.shortestRoute(dist, points.length).split(',');
-    res.json([ret[0], ret[1], ret[2], ...ret.slice(3).map(v => points[v])]);
+    
 });
 
 app.post("/api/assignTask", async (req, res) => {
-    console.log(req.body);
-    const response = await axios({
-        method: "POST",
-        url: "http://localhost/api/assignTask.php",
-        data: req.body
-    })
-
-    console.log(response.data);
-    res.end();
+    const {jobname, start, end, description, location, workerEmail, assignEmail} = req.body;
+    const insertParams = [jobname, start, end, description, location, workerEmail, assignEmail, "incompleted"];
+    if (insertParams.some(v => v === undefined)) {
+        res.end("error");
+        return;
+    }
+    db.run("INSERT INTO tasks(jobname,start,end,description,location,workerEmail,assignEmail,status) VALUES (?,?,?,?,?,?,?,?)",
+           insertParams, (err) => {
+        
+        err ? res.end("error") : res.end();
+    });
 });
 
 app.get("/api/getUsersInfo", async (req, res) => {
-    const response = await axios({
-        method: "GET",
-        url: "http://localhost/api/getUsersInfo.php"
+    db.all("SELECT * FROM userinfo", (err, rows) => {
+        err ? res.end("error") : res.json(rows);
     });
-    res.json(response.data);
 });
 
 app.get("/api/getTasks", async (req, res) => {
-    const response = await axios({
-        method: "GET",
-        url: "http://localhost/api/getTasks.php"
+    db.all("SELECT * FROM tasks", (err, rows) => {
+        err ? res.end("error") : res.json(rows);
     });
-    res.json(response.data);
 });
 
 
 app.get("/api/completeTask", async (req, res) => {
-    res.end();
-    const response = await axios({
-        method: "GET",
-        url: `http://localhost/api/completeTask.php?taskid=${req.query.taskid}`
+    db.run('UPDATE tasks SET status="completed" WHERE taskid=?', [parseInt(req.query.taskid)], (err) => {
+        err ? res.end("error") : res.end();
     });
-    console.log(response.data);
 })
 
 server.listen(5000);
+

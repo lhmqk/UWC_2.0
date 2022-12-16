@@ -69,7 +69,7 @@
               </svg>
               Phân công
             </a>
-            <a class="sidebar-link route" href="#">
+            <a class="sidebar-link route" href="#" onclick="calcRoute()">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -156,15 +156,17 @@
             </div>
           </div>
           <script>
-            const params = new Proxy(new URLSearchParams(window.location.search), {
-              get: (searchParams, prop) => searchParams.get(prop),
-            });
-            if (params.name && params.picture) {
-              document.getElementById("fullname").innerText = params.name;
-              document.getElementById("profilePicture").src = params.picture;
-              document.querySelector(".loginWrapper").className = "loginWrapper";
+            {
+              const params = new URLSearchParams(window.location.search);
+              const name = params.get("name");
+              const picture = params.get("picture");
+              if (name && picture) {
+                document.getElementById("fullname").innerText = name;
+                document.getElementById("profilePicture").src = picture;
+                document.querySelector(".loginWrapper").className = "loginWrapper";
+              }
+              else document.querySelector(".loginWrapper").className = "loginWrapper show";
             }
-            else document.querySelector(".loginWrapper").className = "loginWrapper show";
           </script>
           <div class="home-section section show anim">
             <div id="homeWrapper">
@@ -338,7 +340,7 @@
                         >
                         <input id="new-taskName" type="text" name="title" />
                       </li>
-                      <li>
+                      <li style="display: none;">
                         <label for="event-employee"
                           ><i aria-hidden="true"></i>Nhân viên</label
                         >
@@ -413,56 +415,66 @@
           <div class="route-section section anim">
                         
             
-            <span id='map' style='position: absolute; top: 0; bottom: 0; width: 100%;'></span>
+            <div id='map' style="width: 100%; height: 100%;"></div>
             <script>
               
             
             goongjs.accessToken = 'nzLK6wcJFBQKxqI3rqeon8LofhHhOfzs3uLNcZ39';
+
+            function calcRoute() {
+              document.getElementById("map").innerHTML = '';
             
-            var map = new goongjs.Map({
-                container: 'map',
-                style: 'https://tiles.goong.io/assets/goong_map_web.json',
-                center: [106.658573, 10.7590557],
-                zoom: 15
-            });
-            let dstMarker = new goongjs.Marker({ color: '#0000FF' });
-            let srcMarker = new goongjs.Marker({ color: '#FF0000' });
+              var map = new goongjs.Map({
+                  container: 'map',
+                  style: 'https://tiles.goong.io/assets/goong_map_web.json',
+                  center: [106.658573, 10.7590557],
+                  zoom: 15
+              });
+              let dstMarker = new goongjs.Marker({ color: '#0000FF' });
+              let srcMarker = new goongjs.Marker({ color: '#FF0000' });
 
 
-            map.on('load', async function () {
-                const paths = (await (await fetch("/api/optimalRoute")).json()).slice(3).map(v => {
-                  const r = v.split(',');
-                  return [parseFloat(r[1]), parseFloat(r[0])];
-                });
+              map.on('load', async function () {
                 
-                console.log(paths);
-                dstMarker.setLngLat(paths[1]).addTo(map);
-                srcMarker.setLngLat(paths[0]).addTo(map);
-                map.addSource('route', {
-                    'type': 'geojson',
-                    'data': {
-                        'type': 'Feature',
-                        'properties': {},
-                        'geometry': {
-                            'type': 'LineString',
-                            'coordinates': paths
-                        }
-                    }
-                });
-                map.addLayer({
-                    'id': 'route',
-                    'type': 'line',
-                    'source': 'route',
-                    'layout': {
-                        'line-join': 'round',
-                        'line-cap': 'round'
-                    },
-                    'paint': {
-                        'line-color': '#888',
-                        'line-width': 8
-                    }
-                });
-            });
+                  map.resize();
+                  const result = await (await fetch("/api/optimalRoute")).json();
+                  const [minCost, _, inorderCost] = result.slice(0, 3);
+                  const paths = result.slice(3).map(v => {
+                    const r = v.split(',');
+                    return [parseFloat(r[1]), parseFloat(r[0])];
+                  });
+                  
+                  dstMarker.setLngLat(paths[1]).addTo(map);
+                  srcMarker.setLngLat(paths[0]).addTo(map);
+                  map.addSource('route', {
+                      'type': 'geojson',
+                      'data': {
+                          'type': 'Feature',
+                          'properties': {},
+                          'geometry': {
+                              'type': 'LineString',
+                              'coordinates': paths
+                          }
+                      }
+                  });
+                  map.addLayer({
+                      'id': 'route',
+                      'type': 'line',
+                      'source': 'route',
+                      'layout': {
+                          'line-join': 'round',
+                          'line-cap': 'round'
+                      },
+                      'paint': {
+                          'line-color': '#888',
+                          'line-width': 8
+                      }
+                  });
+                  await new Promise(resolve => setTimeout(resolve));
+                  
+                  alert(`You saved ${(1 - minCost / inorderCost) * 100}%`);
+              });
+            }
             </script>
           </div>
 

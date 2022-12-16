@@ -89,7 +89,7 @@ async function assignTaskREST(body) {
     body: body
   });
 }
-var addTask = function () {
+var addTask = async function () {
   console.log("Add task...");
   //Create a new list item with the text from #new-task:
   var listItem = createNewTaskElement(
@@ -100,7 +100,7 @@ var addTask = function () {
     taskInputDesc.value
   );
 
-  assignTaskREST(JSON.stringify({
+  await assignTaskREST(JSON.stringify({
     jobname: taskInputName.value,
     start: taskInputFrom.value,
     end: taskInputTo.value,
@@ -111,8 +111,9 @@ var addTask = function () {
   }));
   
   //Append listItem to incompleteTasksHolder
-  incompleteTasksHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskCompleted);
+  // incompleteTasksHolder.appendChild(listItem);
+  // bindTaskEvents(listItem, taskCompleted);
+  setJanitorEmail(janitorEmail);
 
   taskInputName.value = "";
   taskInputFrom.value = "";
@@ -201,7 +202,10 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
 // }
 
 //Set the click handler to the addTask function
-addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", (ev) => {
+  ev.preventDefault();
+  addTask();
+});
 //addButton.addEventListener("click", ajaxRequest);
 
 //cycle over incompleteTasksHolder ul list items
